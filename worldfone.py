@@ -8,7 +8,7 @@ from time_function import last_unix_t_of_month,convert_unix_to_date,unix_month_n
 
 
 def get_worldfone_api(startdate,enddate,page=1):
-    worldfone_key=etract_variable_yml_string(dictionary_1='worldfone',dictionary_2='secret_key',file_name='worldfone_key')
+    worldfone_key='yourkey'
     url='https://apps.worldfone.vn/externalcrm/getcdrs.php?secret='+str(worldfone_key)+'&startdate='+str(startdate)+'&enddate='+str(enddate)+'&page='+str(page)+'&pageSize=100'
     print(url)
     raw_output = requests.post(url).json()
