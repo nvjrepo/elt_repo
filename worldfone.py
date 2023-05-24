@@ -33,7 +33,7 @@ def worldfone_pd(start_date,end_date):
     return data_to_insert
 
 def worldfone_bq(schema,table_id):
-    query_string="select max(unix_seconds(timestamp(calldate || ' UTC+7'))) as calldate FROM "+'`pacc-raw-data.'+schema+'.'+table_id+'`'
+    query_string="select max(unix_seconds(timestamp(calldate || ' UTC+7'))) as calldate FROM "+'`your_project.'+schema+'.'+table_id+'`'
     start_date=bq_pandas(query_string)['calldate'].astype(int).to_list()[0] + 1
     end_date = int(time.mktime(datetime.today().timetuple()))
 
